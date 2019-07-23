@@ -18,6 +18,8 @@ class authenticationService {
         });
 
         console.log(response);
+
+        return response
     }
 
 }
