@@ -1,17 +1,27 @@
 import {describe} from "mocha";
+import { authenticationService } from "infra/authenticationService.js"
 
 describe("Suite Description - > Testing Cam", () => {
 
     beforeEach(() => {
-        prepareTest();
+        const authService = new authenticationService();
     });
 
-    it("ID1212 - Test Description",() => {
+    it("ID_1- Login existing user",() => {
         // Test logic here...
+        authService.login("aaa","aaa")
 
         // validation example...
-        let size = {height: 100, width: 100};
-        expect(size.height).equal(size.width);
+        expect(username).equal("aaa");
+
+    });
+
+    it("ID_2- Login non existing user",() => {
+        // Test logic here...
+        authService.login("lalala","blalbla")
+
+        // validation example...
+        expect(authService.login("lalala","blalbla")).to.throw(Error)
 
     });
 });
